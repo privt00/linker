@@ -1,6 +1,6 @@
-<?php include(BASE_PATH.'resources/components/head.php'); ?>
-<?php include(BASE_PATH.'resources/components/dashboard_auth_check.php'); ?>
-<?php include(BASE_PATH.'resources/components/sidebar.php'); ?>
+<?php include(BASE_PATH . 'resources/components/head.php'); ?>
+<?php include(BASE_PATH . 'resources/components/dashboard_auth_check.php'); ?>
+<?php include(BASE_PATH . 'resources/components/sidebar.php'); ?>
 
     <div class="w-[84%] h-screen fixed top-0 right-0 bg-neutral-900 p-14 grid grid-cols-2 gap-4">
 
@@ -198,13 +198,13 @@
             el.innerHTML = `
                 <div class="space-y-2">
 
-${job.previewURL ? `
-    <div class="w-full h-32 overflow-hidden rounded border border-white/10 mb-2">
-        <img src="${job.previewURL}"
-             class="h-full"
-             style="width: 200%; object-fit: cover; object-position: left center;">
-    </div>
-` : ''}
+                    ${job.previewURL ? `
+                        <div class="w-full h-32 overflow-hidden rounded border border-white/10 mb-2">
+                            <img src="${job.previewURL}"
+                                 class="h-full"
+                                 style="width: 200%; object-fit: cover; object-position: left center;">
+                        </div>
+                    ` : ''}
                     <div class="flex justify-between">
                         <span class="text-white">${job.file}</span>
                         <span class="text-neutral-400 text-xs">${Math.round(percent)}%</span>
@@ -229,4 +229,4 @@ ${job.previewURL ? `
 
     </script>
 
-<?php include(BASE_PATH.'resources/components/footer.php'); ?>
+<?php include(BASE_PATH . 'resources/components/footer.php'); ?>
