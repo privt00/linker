@@ -1,6 +1,6 @@
-<?php include(BASE_PATH.'resources/components/head.php'); ?>
-<?php include(BASE_PATH.'resources/components/dashboard_auth_check.php'); ?>
-<?php include(BASE_PATH.'resources/components/sidebar.php'); ?>
+<?php include(BASE_PATH . 'resources/components/head.php'); ?>
+<?php include(BASE_PATH . 'resources/components/dashboard_auth_check.php'); ?>
+<?php include(BASE_PATH . 'resources/components/sidebar.php'); ?>
 
     <div class="w-[84%] h-screen fixed top-0 right-0 bg-neutral-900 p-14">
 
@@ -23,7 +23,7 @@
         async function loadGcodes() {
             const res = await fetch("/api/gcodes", {
                 method: "GET",
-                headers: { "Accept": "application/json" }
+                headers: {"Accept": "application/json"}
             });
 
             const data = await res.json();
@@ -71,11 +71,11 @@
         function selectGcode(id) {
             fetch("/api/gcodes/print?id=" + encodeURIComponent(id), {
                 method: "GET",
-                headers: { "Accept": "application/json" }
+                headers: {"Accept": "application/json"}
             });
         }
 
         loadGcodes();
     </script>
 
-<?php include(BASE_PATH.'resources/components/footer.php'); ?>
+<?php include(BASE_PATH . 'resources/components/footer.php'); ?>

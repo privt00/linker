@@ -8,5 +8,4 @@ $id = $_GET["id"];
 echo postURL($_COOKIE["address"] . '/api/print/start/' . $id);
 
 
-
 ?>

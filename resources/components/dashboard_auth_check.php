@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-if(!isset($_COOKIE["address"])) {
-  header("Location: /");
-  die();
+if (!isset($_COOKIE["address"])) {
+    header("Location: /");
+    die();
 }
 
 ?>

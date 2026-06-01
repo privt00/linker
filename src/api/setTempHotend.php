@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $target = $_GET["target"];
 
-  $data = <<<DATA
+$data = <<<DATA
   {
       "target": $target
   }
@@ -12,7 +12,6 @@ $target = $_GET["target"];
 
 
 echo postURL($_COOKIE["address"] . '/api/temperature/hotend', $data);
-
 
 
 ?>

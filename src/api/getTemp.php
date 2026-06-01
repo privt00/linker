@@ -6,5 +6,4 @@ header("Content-Type: application/json; charset=UTF-8");
 echo fetchURL($_COOKIE["address"] . '/api/temperature');
 
 
-
 ?>
