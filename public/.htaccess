@@ -1,0 +1,48 @@
+  <IfModule mod_rewrite.c>
+
+    RewriteEngine on
+    RewriteBase /
+
+
+
+	#auth
+	RewriteRule ^/?$ index.php?page=auth [L]
+
+  #dashboard
+  RewriteRule ^dashboard?$ index.php?page=dashboard [L]
+
+  #G-codes
+  RewriteRule ^gcodes?$ index.php?page=gcodes [L]
+
+  #api
+  #login
+  RewriteRule ^api/login?$ index.php?page=api_login [L]
+
+  #get Temp
+  RewriteRule ^api/temp?$ index.php?page=api_get_temp [L]
+
+  #set Temp Hotend
+  RewriteRule ^api/temp/hotend?$ index.php?page=api_set_temp_hotend&target=$1 [L,QSA]
+
+  #set Temp Bed
+  RewriteRule ^api/temp/bed?$ index.php?page=api_set_temp_bed&target=$1 [L,QSA]
+
+  #get G-Codes
+  RewriteRule ^api/gcodes?$ index.php?page=get_gcodes [L]
+
+  #start print
+  RewriteRule ^api/gcodes/print?$ index.php?page=start_print&id=$1 [L,QSA]
+
+  #start print
+  RewriteRule ^api/print?$ index.php?page=get_print_stats [L]
+
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ /index.php?page=404 [L]
+
+</IfModule>
+<Files 403.shtml>
+    order allow,deny
+    allow from all
+</Files>
